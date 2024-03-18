@@ -1,0 +1,23 @@
+@import "src/styles/_colors.scss";
+
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 35px;
+  margin-bottom: 80px;
+
+  .link {
+    text-decoration: none;
+    border: 0.75px solid $main-text-color;
+    height: 120px;
+    width: 310px;
+    font-size: 36px;
+    font-weight: 300;
+    letter-spacing: -0.72px;
+    color: $main-text-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

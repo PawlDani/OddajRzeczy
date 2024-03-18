@@ -1,0 +1,44 @@
+// components/Home/HomeThreeColumns/HomeThreeColumns.module.scss
+@import "../../../styles/colors"; // Import your color variables
+
+.threeColumnsContainerWrapper {
+  background: url("../../../assets/3columnsBackground.png") no-repeat center
+    center;
+  background-size: cover; // Ensure the background covers the entire container
+
+  .threeColumnsContainer {
+    display: flex;
+    justify-content: space-around; // This will space your columns evenly
+    text-align: center; // Center text for all columns
+    padding: 4rem 0; // Add vertical padding to container
+    width: 100%;
+
+    .column {
+      width: calc(33.333% - 2rem); // Adjust the width calculation as needed
+      display: flex; // Use flex to center content vertically and horizontally
+      flex-direction: column; // Stack the content vertically
+      justify-content: center; // Center content vertically
+      align-items: center; // Center content horizontally
+
+      .number {
+        font-size: 5rem; // Example size, adjust as needed
+        font-weight: bold; // Bold font for the number
+        color: $main-text-color; // Use a dark color variable for text
+        margin-bottom: 1rem; // Space between the number and title
+      }
+
+      .title {
+        font-size: 1.5rem; // Example size, adjust as needed
+        color: $main-text-color; // Use a dark color variable for text
+        text-transform: uppercase; // Uppercase title
+        margin-bottom: 1rem; // Space between the title and description
+      }
+
+      .description {
+        font-size: 1rem; // Example size, adjust as needed
+        color: $main-text-color; // Use a dark color variable for text
+        max-width: 80%; // Set a max-width to control line length
+      }
+    }
+  }
+}

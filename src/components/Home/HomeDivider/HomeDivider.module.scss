@@ -1,0 +1,26 @@
+@import "src/styles/_colors.scss";
+
+.dividerContainerWrapper {
+  padding: 4rem 0;
+  width: 100%;
+
+  .dividerContainer {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    width: 100%;
+
+    .dividerContent {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .title {
+        font-size: 38px;
+        color: $main-text-color;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
