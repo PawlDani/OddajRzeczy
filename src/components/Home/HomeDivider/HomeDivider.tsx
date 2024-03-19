@@ -1,18 +1,17 @@
+// components/Home/HomeDivider/HomeDivider.tsx
 import React from "react";
 import styles from "./HomeDivider.module.scss";
-import decoration from "../../../assets/Decoration.svg";
 
 interface DividerContent {
   svg: string;
   title: string;
 }
 
-const HomeDivider: React.FC = () => {
-  const dividerContent: DividerContent = {
-    svg: decoration,
-    title: "Wystarczą 4 proste kroki",
-  };
+interface HomeDividerProps {
+  dividerContent: DividerContent;
+}
 
+const HomeDivider: React.FC<HomeDividerProps> = ({ dividerContent }) => {
   return (
     <div className={styles.dividerContainerWrapper}>
       <div className={`${styles.dividerContainer} container`}>

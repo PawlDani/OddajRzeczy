@@ -15,19 +15,19 @@ const HomeThreeColumns: React.FC = () => {
       number: "10",
       title: "ODDANYCH WORKÓW",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel enim a elit viverra elementuma. Aliquam erat volutpat.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing. Pellentesque vel enim a elit viverra elementuma. Aliquam erat volutpat.",
     },
     {
       number: "5",
       title: "WSPARTYCH ORGANIZACJI",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel enim a elit viverra elementuma. Aliquam erat volutpat.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing. Pellentesque vel enim a elit viverra elementuma. Aliquam erat volutpat.",
     },
     {
       number: "7",
       title: "ZORGANIZOWANY ZBIÓREK",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel enim a elit viverra elementuma. Aliquam erat volutpat.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing. Pellentesque vel enim a elit viverra elementuma. Aliquam erat volutpat.",
     },
   ];
 

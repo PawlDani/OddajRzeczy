@@ -3,9 +3,11 @@ import React from "react";
 import HomeHeader from "./HomeHeader/HomeHeader";
 import HomeHero from "./HomeHero/HomeHero";
 import HomeThreeColumns from "./HomeThreeColumns/HomeThreeColumns";
-import HomeDivider from "./HomeDivider/HomeDivider";
+import HomeStepsDivider from "./HomeStepsDivider/HomeStepsDivider";
 import HomeSteps from "./HomeSteps/HomeSteps";
 import HomeButton from "./HomeButton/HomeButton";
+import HomeAbout from "./HomeAbout/HomeAbout";
+import HomeHelpSection from "./HomeHelp/HomeHelp";
 
 const Home: React.FC = () => {
   return (
@@ -13,9 +15,11 @@ const Home: React.FC = () => {
       <HomeHeader />
       <HomeHero />
       <HomeThreeColumns />
-      <HomeDivider />
+      <HomeStepsDivider />
       <HomeSteps />
       <HomeButton />
+      <HomeAbout />
+      <HomeHelpSection />
     </div>
   );
 };

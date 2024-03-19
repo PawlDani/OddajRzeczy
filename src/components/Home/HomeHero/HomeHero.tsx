@@ -7,7 +7,7 @@ import { Link as RouterLink } from "react-router-dom";
 
 const HomeHero: React.FC = () => {
   return (
-    <div className={`${styles.heroSection} container`}>
+    <div id="start" className={`${styles.heroSection} container`}>
       <div className={styles.imageContainer}>
         <img src={heroImage} alt="hero" />
       </div>

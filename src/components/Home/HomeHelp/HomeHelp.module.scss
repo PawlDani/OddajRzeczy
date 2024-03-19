@@ -1,0 +1,122 @@
+// components/Home/HomeHelpSection/HomeHelpSection.module.scss
+
+@import "src/styles/_colors.scss";
+@import "src/styles/_fonts.scss";
+
+.helpSection {
+  font-family: "Open Sans", sans-serif; // Replace with your font
+  color: $main-text-color;
+  margin: 0 auto;
+  margin-bottom: 80px;
+  width: 71%;
+}
+
+.helpSectionTitle {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  gap: 100px;
+  margin: 0 auto;
+  margin-bottom: 70px;
+  max-width: 750px;
+}
+
+.tab {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: $main-text-color; // Replace with the color when tab is not active
+  text-align: center;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 24px; // Adjust as needed
+  transition: color 0.3s, border 0.3s;
+
+  // last tab no margin right
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:hover,
+  &.active {
+    color: $main-text-color; // Replace with the color when tab is active or hovered
+    border: 0.75px solid $main-text-color; // Replace with the color when tab is active or hovered
+  }
+}
+
+.description {
+  width: 50%;
+  text-align: center;
+  padding: 0 15px;
+  margin: 0 auto;
+  min-width: 610px;
+  margin-bottom: 65px; // Space between the description and the items
+  font-size: 22px; // Adjust as needed
+}
+
+.items {
+  list-style: none;
+  padding: 0;
+  font-family: $font-alt;
+}
+
+.item {
+  margin-bottom: 20px; // Space between items
+}
+
+.itemTitle {
+  font-size: 26px; // Adjust as needed // Replace with your preferred font
+  margin-bottom: 10px; // Space between the title and detail
+  font-weight: 300;
+}
+
+.itemDetail {
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 300;
+  margin-right: 20px;
+}
+
+.itemContents {
+  font-size: 18px;
+  font-weight: 300;
+}
+.divider {
+  border: 0;
+  height: 1px;
+  background: $main-text-color; // Replace with your preferred color
+  margin-top: 20px; // Space after the details before the line
+}
+
+.itemWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 63px; // Adjust as needed
+}
+
+.pagination button {
+  background: none;
+  border: transparent;
+  margin: 0 20px 0 0; // Spacing between buttons
+  height: 50px;
+  width: 40px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  font-family: $font-base;
+
+  &:hover,
+  &.activePage {
+    // Highlight color for hover an
+    border: 1px solid #707070; // Use your main color here
+  }
+}
