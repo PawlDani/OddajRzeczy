@@ -1,7 +1,6 @@
-// components/Home/HomeHelpSection/HomeHelpSection.tsx
 import React, { useState } from "react";
-import styles from "./HomeHelp.module.scss"; //#endregion
-import HomeDivider from "../HomeDivider/HomeDivider";
+import styles from "./Help.module.scss";
+import HomeDivider from "../Divider/Divider";
 import decoration from "../../../assets/Decoration.svg";
 
 type TabKey = "foundations" | "organizations" | "local";
@@ -40,7 +39,6 @@ const contentForTabs: { [key in TabKey]: TabContent } = {
         contents: "ubrania, jedzenie, ciepłe koce",
       },
       {
-        // further random content
         title: "Fundacja " + Math.random().toString(36).substr(2, 5),
         detail: "Cel i misja: " + Math.random().toString(36).substr(2, 5),
         contents: "ubrania, jedzenie, ciepłe koce",
@@ -138,7 +136,6 @@ const HomeHelpSection: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(1);
 
   const handleClick = (tabId: TabKey) => {
-    console.log(`Tab changed to: ${tabId}`); // New log
     setActiveTab(tabId);
     setCurrentPage(1);
   };
@@ -164,7 +161,6 @@ const HomeHelpSection: React.FC = () => {
       <button
         key={i}
         onClick={() => {
-          console.log(`Changing page to: ${i}`); // New log
           setCurrentPage(i);
         }}
         className={currentPage === i ? styles.activePage : ""}
@@ -175,7 +171,7 @@ const HomeHelpSection: React.FC = () => {
   }
 
   return (
-    <div className={`${styles.helpSection} container`}>
+    <div className={`${styles.helpSection} container`} id="organizations">
       <div className={styles.helpSectionTitle}>
         <HomeDivider dividerContent={dividerContent} />
       </div>

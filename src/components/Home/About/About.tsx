@@ -1,13 +1,12 @@
-// components/Home/HomeAboutSection/HomeAboutSection.tsx
 import React from "react";
-import styles from "./HomeAbout.module.scss";
-import decoration from "../../../assets/Decoration.svg"; // Assuming this is the correct path to your SVG file
-import signature from "../../../assets/Signature.svg"; // Assuming this is the correct path to your SVG file
-import people from "../../../assets/People.jpg"; // Assuming this is the correct path to your image file
+import styles from "./About.module.scss";
+import decoration from "../../../assets/Decoration.svg";
+import signature from "../../../assets/Signature.svg";
+import people from "../../../assets/People.jpg";
 
 const HomeAboutSection: React.FC = () => {
   return (
-    <div className={styles.aboutSection}>
+    <div className={styles.aboutSection} id="about-us">
       <div className={`${styles.aboutContent} container`}>
         <div className={styles.leftColumn}>
           <h2 className={styles.title}>O nas</h2>
@@ -32,8 +31,5 @@ const HomeAboutSection: React.FC = () => {
     </div>
   );
 };
-
-// log window inner width
-console.log(window.innerWidth);
 
 export default HomeAboutSection;

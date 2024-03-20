@@ -1,0 +1,191 @@
+@import "../../../styles/colors.scss";
+@import "../../../styles/fonts.scss";
+
+.contactFormWrapper {
+  height: 1026px;
+  overflow: hidden;
+
+  .contactForm {
+    background: url("src/assets/Background-Contact-Form.jpg") 0% 0% no-repeat
+      padding-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 1112px;
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    .formWrapper {
+      z-index: 2;
+      align-self: flex-end;
+      display: flex;
+      align-items: flex-end;
+      flex-direction: column;
+      max-width: 528px;
+      width: 100%;
+      margin-right: 142px;
+      margin-top: 200px;
+
+      .dividerWrapper {
+        align-self: center;
+        margin-bottom: 70px;
+        width: 100%;
+        z-index: 2;
+
+        .successMessage {
+          display: flex;
+          width: 300px;
+          margin: 0 auto;
+          color: green; // Example success color, adjust as needed
+          margin-top: 20px; // Spacing above the message
+          font-weight: bold;
+          font-size: 18px; // Larger font for visibility
+          text-align: center; // Center it below the divider
+        }
+      }
+
+      form {
+        display: flex;
+        z-index: 2;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 10px;
+        width: 100%;
+        max-width: 600px;
+        font-family: $font-base;
+
+        .inputRow {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+          margin-bottom: 40px;
+          gap: 16px;
+
+          @media (max-width: 768px) {
+            flex-direction: column;
+          }
+
+          .inputGroup {
+            flex: 1;
+
+            &:not(:last-child) {
+              margin-right: 20px;
+            }
+
+            @media (max-width: 768px) {
+              margin-right: 0;
+              margin-bottom: 20px;
+            }
+          }
+        }
+
+        .inputGroup {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+
+          label {
+            color: $main-text-color;
+            margin-bottom: 5px;
+            font-weight: 600;
+          }
+
+          input,
+          textarea {
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid #000;
+            padding: 10px 0;
+            font-size: 18px;
+            font-family: $font-base;
+
+            &:focus {
+              outline: none;
+              border-bottom: 2px solid #000;
+            }
+
+            &::placeholder {
+              color: #3c3c3c26;
+            }
+          }
+
+          textarea {
+            height: auto;
+            min-height: 100px;
+
+            resize: none;
+          }
+
+          .errorMessage {
+            color: red;
+            margin-bottom: 20px;
+            font-size: 14px;
+            font-weight: bold;
+          }
+        }
+
+        .error {
+          color: red;
+        }
+      }
+
+      button {
+        align-self: flex-end;
+        font-family: $font-base;
+        background-color: transparent;
+        color: $main-text-color;
+        padding: 13px 52px;
+        border: 1px solid $main-text-color;
+        cursor: pointer;
+        font-size: 18px;
+        margin-top: 40px;
+        font-weight: 300;
+        transition: all 0.3s;
+        &:hover {
+          scale: 1.1;
+        }
+      }
+    }
+  }
+
+  .contactFooter {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    position: relative; 
+    width: 100%;
+    z-index: 2;
+    margin-bottom: 100px;
+
+    .copyright {
+      font-family: $font-base;
+      font-size: 18px;
+      color: $main-text-color;
+      text-align: center;
+    }
+
+    .social {
+      position: absolute;
+      right: 142px;
+      display: flex;
+      gap: 20px;
+
+      img {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+}

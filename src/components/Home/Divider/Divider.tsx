@@ -1,6 +1,5 @@
-// components/Home/HomeDivider/HomeDivider.tsx
 import React from "react";
-import styles from "./HomeDivider.module.scss";
+import styles from "./Divider.module.scss";
 
 interface DividerContent {
   svg: string;

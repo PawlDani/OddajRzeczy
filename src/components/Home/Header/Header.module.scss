@@ -1,0 +1,87 @@
+@import "src/styles/_colors.scss";
+@import "src/styles/_fonts.scss";
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 1rem 0;
+  margin-top: 20px;
+
+  position: relative;
+  z-index: 2;
+
+  .topMenu {
+    animation: slideInFromLeft 1s ease-out forwards;
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 14px;
+    margin-right: 100px;
+
+    .userLink {
+      font-size: 14px;
+      padding: 0.5rem 1rem;
+      font-family: $font-base;
+    }
+    .specialLink {
+      font-size: 13px;
+      color: #000000;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border: 1px solid transparent;
+      &:hover {
+        border-color: $border-color-yellow;
+      }
+    }
+    .link {
+      color: $color-text;
+      font-size: 12px;
+
+      &:hover {
+        border-color: $border-color-yellow;
+      }
+    }
+  }
+
+  .bottomMenu {
+    display: flex;
+    gap: 1rem;
+    font-size: 18px;
+    margin-right: 100px;
+    animation: slideInFromRight 1s ease-out forwards;
+  }
+
+  .link {
+    text-decoration: none;
+    color: $main-text-color;
+    padding: 0.5rem 1rem;
+    border: 1px solid transparent;
+
+    &:hover {
+      border-color: $main-text-color;
+    }
+  }
+}

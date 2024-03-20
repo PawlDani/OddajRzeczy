@@ -1,19 +1,35 @@
-// components/Header/Header.tsx
-import React from "react";
 import { Link as RouterLink } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
-import styles from "./HomeHeader.module.scss";
+import styles from "./Header.module.scss";
+import { useStoreState } from "../../../hooks";
 
 const Header: React.FC = () => {
+  const user = useStoreState((state) => state.auth.user);
+
   return (
     <header className={`${styles.header} container`}>
       <div className={styles.topMenu}>
-        <RouterLink to="/login" className={styles.link}>
-          Zaloguj
-        </RouterLink>
-        <RouterLink to="/register" className={styles.link}>
-          Załóż konto
-        </RouterLink>
+        {user ? (
+          <>
+            <span className={styles.userLink}>Cześć, {user.email}!</span>{" "}
+            {/* Display user email */}
+            <RouterLink to="/oddaj-rzeczy" className={styles.specialLink}>
+              Oddaj rzeczy
+            </RouterLink>
+            <RouterLink to="/wyloguj" className={styles.link}>
+              Wyloguj
+            </RouterLink>
+          </>
+        ) : (
+          <>
+            <RouterLink to="/logowanie" className={styles.link}>
+              Zaloguj
+            </RouterLink>
+            <RouterLink to="/rejestracja" className={styles.link}>
+              Załóż konto
+            </RouterLink>
+          </>
+        )}
       </div>
       <nav className={styles.bottomMenu}>
         <ScrollLink
@@ -53,6 +69,7 @@ const Header: React.FC = () => {
           smooth={true}
           duration={500}
           className={styles.link}
+          offset={150}
         >
           Kontakt
         </ScrollLink>

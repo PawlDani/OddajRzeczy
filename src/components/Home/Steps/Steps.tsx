@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./HomeSteps.module.scss";
+import styles from "./Steps.module.scss";
 import Svg1 from "../../../assets/Icon-1.svg";
 import Svg2 from "../../../assets/Icon-2.svg";
 import Svg3 from "../../../assets/Icon-3.svg";

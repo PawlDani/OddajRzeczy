@@ -1,5 +1,15 @@
-@use "sass:math";
 @import "../../../styles/colors.scss";
+
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 .heroSection {
   position: relative;
@@ -9,69 +19,75 @@
   height: 100%;
   width: 100%;
 
-  // overflow: hidden;
-}
+  .imageContainer {
+    position: absolute;
+    left: -483px;
+    top: -160px;
+    z-index: 1;
 
-.imageContainer {
-  position: absolute;
-  left: -483px;
-  top: -160px;
-  z-index: 1;
-
-  img {
-    width: 100%;
-    height: 100%;
-  }
-}
-.contentWrapper {
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  width: 100%;
-  margin-right: 230px;
-  margin-bottom: 271px;
-  margin-top: 184px;
-}
-.content {
-  display: flex;
-
-  flex-direction: column;
-  text-align: center;
-  align-items: center;
-  color: $main-text-color;
-  z-index: 2;
-  margin-right: 0;
-
-  h1 {
-    font-size: 38px;
-    letter-spacing: -0.76px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
   }
 
-  p {
-    font-size: 38px;
-    letter-spacing: -0.76px;
-    margin-bottom: 25px;
-  }
-
-  .links {
+  .contentWrapper {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    margin-top: 65px;
+    align-items: flex-end;
+    justify-content: flex-end;
+    width: 100%;
+    margin-right: 230px;
+    margin-bottom: 271px;
+    margin-top: 184px;
 
-    .link {
-      text-decoration: none;
-      border: 0.75px solid $main-text-color;
-      height: 120px;
-      width: 310px;
-      font-size: 36px;
-      font-weight: 300;
-      letter-spacing: -0.72px;
-      color: $main-text-color;
+    .content {
+      animation: fadeInSlideUp 1.5s ease-out forwards;
       display: flex;
+
+      flex-direction: column;
+      text-align: center;
       align-items: center;
-      justify-content: center;
+      color: $main-text-color;
+      z-index: 2;
+      margin-right: 0;
+
+      h1 {
+        font-size: 38px;
+        letter-spacing: -0.76px;
+      }
+
+      p {
+        font-size: 38px;
+        letter-spacing: -0.76px;
+        margin-bottom: 25px;
+      }
+
+      .links {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        margin-top: 65px;
+
+        .link {
+          text-decoration: none;
+          border: 0.75px solid $main-text-color;
+          height: 120px;
+          width: 310px;
+          font-size: 36px;
+          font-weight: 300;
+          letter-spacing: -0.72px;
+          color: $main-text-color;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: 0.3s ease-in-out;
+
+          &:hover {
+            scale: 1.05;
+          }
+        }
+      }
     }
   }
 }

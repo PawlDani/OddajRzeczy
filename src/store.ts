@@ -1,18 +1,14 @@
-// src/store.ts
-import { createStore, action, Action } from "easy-peasy";
+import { createStore } from "easy-peasy";
+import authModel, { AuthModel } from "./authModel";
 
-interface StoreModel {
-  count: number;
-  increment: Action<StoreModel>;
+export interface StoreModel {
+  auth: AuthModel;
 }
 
-const model: StoreModel = {
-  count: 0,
-  increment: action((state) => {
-    state.count += 1;
-  }),
+const storeModel: StoreModel = {
+  auth: authModel,
 };
 
-const store = createStore(model);
+const store = createStore(storeModel);
 
 export default store;

@@ -1,4 +1,3 @@
-// components/Home/HomeHero/HomeHero.tsx
 import React from "react";
 import styles from "./HomeHero.module.scss";
 import heroImage from "../../../assets/Home-Hero-Image.jpg";

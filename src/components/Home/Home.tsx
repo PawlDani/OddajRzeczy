@@ -1,13 +1,13 @@
-// components/Home/Home.tsx
 import React from "react";
-import HomeHeader from "./HomeHeader/HomeHeader";
+import HomeHeader from "./Header/Header";
 import HomeHero from "./HomeHero/HomeHero";
-import HomeThreeColumns from "./HomeThreeColumns/HomeThreeColumns";
-import HomeStepsDivider from "./HomeStepsDivider/HomeStepsDivider";
-import HomeSteps from "./HomeSteps/HomeSteps";
+import HomeThreeColumns from "./ThreeColumns/ThreeColumns";
+import HomeStepsDivider from "./StepsDivider/StepsDivider";
+import HomeSteps from "./Steps/Steps";
 import HomeButton from "./HomeButton/HomeButton";
-import HomeAbout from "./HomeAbout/HomeAbout";
-import HomeHelpSection from "./HomeHelp/HomeHelp";
+import HomeAbout from "./About/About";
+import HomeHelpSection from "./Help/Help";
+import HomeContact from "./Contact/Contact";
 
 const Home: React.FC = () => {
   return (
@@ -20,6 +20,7 @@ const Home: React.FC = () => {
       <HomeButton />
       <HomeAbout />
       <HomeHelpSection />
+      <HomeContact />
     </div>
   );
 };

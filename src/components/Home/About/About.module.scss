@@ -1,0 +1,50 @@
+@import "src/styles/_colors.scss";
+
+.aboutSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $main-background-color;
+  margin-bottom: 70px;
+
+  .aboutContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .rightColumn {
+      height: auto;
+      overflow: hidden;
+    }
+
+    .leftColumn {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex-basis: 46%;
+      margin: 0 140px;
+      letter-spacing: -0.6px;
+
+      .title {
+        font-size: 38px;
+        margin-bottom: 26px;
+        text-align: center;
+        color: $main-text-color;
+      }
+
+      .description {
+        margin-bottom: 1em;
+        font-size: 30px;
+        text-align: center;
+        margin-top: 55px;
+        color: $main-text-color;
+      }
+
+      .signature {
+        align-self: flex-end;
+        margin-right: 40px;
+      }
+    }
+  }
+}

@@ -1,8 +1,10 @@
 @import "../../../styles/colors";
+
 .stepsContainerWrapper {
   background-color: $main-background-color;
   padding: 80px 0;
   margin-top: 35px;
+
   .stepsContainer {
     display: flex;
     justify-content: space-around;
@@ -22,18 +24,18 @@
         color: $main-text-color;
         text-transform: uppercase;
         margin-bottom: 1rem;
-        margin-top: 10px; // Set the default margin-top value
+        margin-top: 10px;
         position: relative;
 
         &::after {
           content: "";
           position: absolute;
           bottom: -5px;
-          left: 50%; // Move the starting point to the middle
-          transform: translateX(-50%); // Shift it back by half of its width
+          left: 50%; 
+          transform: translateX(-50%); 
           width: 80px;
           height: 1px;
-          background-color: $main-text-color; // Adjust color as needed
+          background-color: $main-text-color; 
         }
       }
 

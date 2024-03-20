@@ -1,6 +1,5 @@
-// components/Home/HomeStepsDivider/HomeStepsDivider.tsx
 import React from "react";
-import HomeDivider from "../HomeDivider/HomeDivider";
+import HomeDivider from "../Divider/Divider";
 import decoration from "../../../assets/Decoration.svg";
 
 const HomeStepsDivider: React.FC = () => {
@@ -9,7 +8,11 @@ const HomeStepsDivider: React.FC = () => {
     title: "Wystarczą 4 proste kroki",
   };
 
-  return <HomeDivider dividerContent={dividerContent} />;
+  return (
+    <div id="about">
+      <HomeDivider dividerContent={dividerContent} />
+    </div>
+  );
 };
 
 export default HomeStepsDivider;
