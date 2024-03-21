@@ -6,8 +6,8 @@ import Logout from "./components/Authentication/SignOut/SignOut";
 import SignIn from "./components/Authentication/SignIn/SignIn";
 
 import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "./firebase-config";
-import { useStoreActions } from "./hooks";
+import { auth } from "./config/firebase-config";
+import { useStoreActions } from "./hooks/hooks";
 
 function App() {
   const setUser = useStoreActions((actions) => actions.auth.setUser);

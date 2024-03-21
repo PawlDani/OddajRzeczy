@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import HomeDivider from "../Divider/Divider";
+import HomeDivider from "../../common/Divider/Divider";
 import decoration from "../../../assets/Decoration.svg";
 import facebook from "../../../assets/Facebook.svg";
 import instagram from "../../../assets/Instagram.svg";

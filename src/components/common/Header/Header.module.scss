@@ -34,7 +34,7 @@
   z-index: 2;
 
   .topMenu {
-    animation: slideInFromLeft 1s ease-out forwards;
+    // animation: slideInFromLeft 1s ease-out forwards;
     display: flex;
     gap: 1rem;
     margin-bottom: 1rem;
@@ -51,14 +51,30 @@
       color: #000000;
       text-decoration: none;
       padding: 0.5rem 1rem;
-      border: 1px solid transparent;
+      border: 1px solid $border-color-yellow;
       &:hover {
+        scale: 1.1;
         border-color: $border-color-yellow;
       }
     }
     .link {
       color: $color-text;
       font-size: 12px;
+      border: 1px solid transparent;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+
+      &:hover {
+        border-color: $border-color-yellow;
+      }
+    }
+
+    .signupLink {
+      color: $color-text;
+      font-size: 12px;
+      border: 1px solid $border-color-yellow;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
 
       &:hover {
         border-color: $border-color-yellow;
@@ -71,17 +87,17 @@
     gap: 1rem;
     font-size: 18px;
     margin-right: 100px;
-    animation: slideInFromRight 1s ease-out forwards;
-  }
+    // animation: slideInFromRight 1s ease-out forwards;
 
-  .link {
-    text-decoration: none;
-    color: $main-text-color;
-    padding: 0.5rem 1rem;
-    border: 1px solid transparent;
+    .link {
+      text-decoration: none;
+      color: $main-text-color;
+      padding: 0.5rem 1rem;
+      border: 1px solid transparent;
 
-    &:hover {
-      border-color: $main-text-color;
+      &:hover {
+        border-color: $main-text-color;
+      }
     }
   }
 }

@@ -5,7 +5,7 @@ import styles from "./HomeButton.module.scss";
 const HomeButton: React.FC = () => {
   return (
     <div className={styles.links}>
-      <RouterLink to="/login" className={styles.link}>
+      <RouterLink to="/logowanie" className={styles.link}>
         ODDAJ <br /> RZECZY
       </RouterLink>
     </div>

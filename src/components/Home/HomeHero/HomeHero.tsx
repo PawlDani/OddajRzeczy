@@ -16,10 +16,10 @@ const HomeHero: React.FC = () => {
           <p>Oddaj niechciane rzeczy w zaufane ręce</p>
           <img src={decoration} alt="decoration" />
           <div className={styles.links}>
-            <RouterLink to="/login" className={styles.link}>
+            <RouterLink to="/logowanie" className={styles.link}>
               ODDAJ <br></br>RZECZY
             </RouterLink>
-            <RouterLink to="/login" className={styles.link}>
+            <RouterLink to="/logowanie" className={styles.link}>
               ZORGANIZUJ ZBIÓRKĘ
             </RouterLink>
           </div>

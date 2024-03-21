@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./Help.module.scss";
-import HomeDivider from "../Divider/Divider";
+import HomeDivider from "../../common/Divider/Divider";
 import decoration from "../../../assets/Decoration.svg";
 
 type TabKey = "foundations" | "organizations" | "local";

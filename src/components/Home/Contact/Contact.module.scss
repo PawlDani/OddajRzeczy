@@ -107,7 +107,7 @@
             background-color: transparent;
             border: none;
             border-bottom: 1px solid #000;
-            padding: 10px 0;
+            padding: 10px 0 5px 0;
             font-size: 18px;
             font-family: $font-base;
 
@@ -162,9 +162,9 @@
 
   .contactFooter {
     display: flex;
-    justify-content: center; 
-    align-items: center; 
-    position: relative; 
+    justify-content: center;
+    align-items: center;
+    position: relative;
     width: 100%;
     z-index: 2;
     margin-bottom: 100px;

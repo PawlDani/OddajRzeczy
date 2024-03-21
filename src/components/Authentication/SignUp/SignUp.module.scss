@@ -1,0 +1,90 @@
+@use "sass:math";
+@import "../../../styles/colors";
+@import "../../../styles/fonts";
+
+.signUpWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 150px); 
+  width: 100%;
+}
+
+.signUpContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.signUpForm {
+  display: flex;
+
+  flex-direction: column;
+  width: 500px; 
+  margin-top: 60px; 
+  label {
+    align-self: flex-start;
+    margin-left: 67px;
+    font-size: 16px;
+    color: $main-text-color;
+    font-weight: 600;
+  }
+}
+
+.inputWrapper {
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 384px;
+  margin: 0 auto;
+  background: #f0f0f0; 
+  box-sizing: border-box; 
+}
+
+.inputField {
+  height: 24px;
+  margin-bottom: 30px;
+  padding: 10px 0 5px 0;
+  background: transparent;
+  border: none;
+  width: 250px;
+  border-bottom: 1px solid $color-text-secondary;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.buttonsContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  background: white;
+}
+
+.submitButton {
+  color: black;
+  border: 0.75px solid $main-text-color;
+  background: transparent;
+  padding: 12px 13px;
+  font-size: 18px;
+  font-family: $font-base;
+  font-weight: 300;
+  transition: all 0.3s ease-in-out;
+
+  cursor: pointer;
+  &:disabled {
+    cursor: not-allowed;
+  }
+  &:hover {
+    scale: 1.1;
+  }
+}

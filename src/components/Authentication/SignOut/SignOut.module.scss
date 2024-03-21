@@ -1,0 +1,46 @@
+@use "sass:math";
+@import "../../../styles/colors";
+@import "../../../styles/fonts";
+
+.signOutWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 150px);
+  width: 100%;
+
+  .signOutContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 414px;
+
+    .signOutMessage {
+      font-size: 24px;
+      color: $main-text-color;
+      margin-bottom: 30px;
+    }
+
+    .submitButton {
+      color: black;
+      border: 0.75px solid $main-text-color;
+      background: transparent;
+      padding: 12px 13px;
+      font-size: 18px;
+      font-family: $font-base;
+      font-weight: 300;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+
+      &:disabled {
+        cursor: not-allowed;
+      }
+
+      &:hover {
+        scale: 1.1;
+      }
+    }
+  }
+}

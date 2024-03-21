@@ -1,5 +1,5 @@
 import React from "react";
-import HomeDivider from "../Divider/Divider";
+import HomeDivider from "../../common/Divider/Divider";
 import decoration from "../../../assets/Decoration.svg";
 
 const HomeStepsDivider: React.FC = () => {
