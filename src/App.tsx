@@ -4,6 +4,7 @@ import Home from "./components/Home/Home";
 import SignUp from "./components/Authentication/SignUp/SignUp";
 import Logout from "./components/Authentication/SignOut/SignOut";
 import SignIn from "./components/Authentication/SignIn/SignIn";
+import OddajRzeczy from "./components/GiveAway/GiveAway";
 
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./config/firebase-config";
@@ -33,6 +34,7 @@ function App() {
         <Route path="/rejestracja" element={<SignUp />} />
         <Route path="/wyloguj" element={<Logout />} />
         <Route path="/logowanie" element={<SignIn />} />
+        <Route path="/oddaj-rzeczy" element={<OddajRzeczy />} />
       </Routes>
     </Router>
   );
