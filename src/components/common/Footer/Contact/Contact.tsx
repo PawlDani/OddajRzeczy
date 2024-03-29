@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import HomeDivider from "../../common/Divider/Divider";
-import decoration from "../../../assets/Decoration.svg";
-import facebook from "../../../assets/Facebook.svg";
-import instagram from "../../../assets/Instagram.svg";
+import HomeDivider from "../../Divider/Divider";
+import decoration from "../../../../assets/Decoration.svg";
+import facebook from "../../../../assets/Facebook.svg";
+import instagram from "../../../../assets/Instagram.svg";
 import styles from "./Contact.module.scss";
 
 const ContactForm: React.FC = () => {

@@ -1,16 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../common/Header/Header";
-// import Footer from "./Footer"; // Import your Footer component
+import GiveAwayHero from "./Hero/Hero";
 import MultiPageForm from "./Form/Form";
+import DynamicText from "./DynamicSection/DynamicText";
+import Contact from "../common/Footer/Contact/Contact";
 
 const OddajRzeczy: React.FC = () => {
+  const [currentStep, setCurrentStep] = useState(1);
+
   return (
     <>
       <Header />
+      <GiveAwayHero />
+      <DynamicText currentStep={currentStep} />
       <main>
-        <MultiPageForm />
+        <MultiPageForm setCurrentStepInParent={setCurrentStep} />
       </main>
-      {/* <Footer /> */}
+      <Contact />
     </>
   );
 };

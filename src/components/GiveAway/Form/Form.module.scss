@@ -1,0 +1,11 @@
+.multiPageFormWrapper {
+  height: 883px;
+
+  .multiPageFormContainer {
+    background: url("../../../assets/Background-Form.jpg") 0% 0% no-repeat
+      padding-box;
+    background-position: right center;
+    height: 100%;
+    display: flex;
+  }
+}

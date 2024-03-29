@@ -1,5 +1,5 @@
-@import "../../../styles/colors.scss";
-@import "../../../styles/fonts.scss";
+@import "../../../../styles/colors.scss";
+@import "../../../../styles/fonts.scss";
 
 .contactFormWrapper {
   height: 1026px;
@@ -47,11 +47,11 @@
           display: flex;
           width: 300px;
           margin: 0 auto;
-          color: green; // Example success color, adjust as needed
-          margin-top: 20px; // Spacing above the message
+          color: green; 
+          margin-top: 20px; 
           font-weight: bold;
-          font-size: 18px; // Larger font for visibility
-          text-align: center; // Center it below the divider
+          font-size: 18px; 
+          text-align: center; 
         }
       }
 

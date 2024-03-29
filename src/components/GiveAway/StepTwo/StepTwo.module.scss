@@ -1,0 +1,123 @@
+@import "../../../styles/colors";
+@import "../../../styles/fonts";
+
+.formStep {
+  margin-left: 142px;
+  font-family: $font-base;
+
+  .stepCounter {
+    margin-top: 36px;
+    font-size: 24px;
+    font-weight: 300;
+    margin-bottom: 70px;
+    color: $main-text-color;
+  }
+
+  .title {
+    font-size: 36px;
+    margin-bottom: 50px;
+    color: black;
+  }
+
+  .form {
+    display: flex;
+    gap: 26px;
+    align-items: center;
+
+    .bagsText {
+      font-size: 24px;
+      font-weight: 300;
+    }
+
+    .dropdownContainer {
+      position: relative;
+      display: flex;
+      align-items: center;
+      width: 300px; 
+    }
+
+    .dropdownLabel {
+      display: block;
+      border: 0.75px solid $main-text-color;
+      background-color: transparent;
+      padding: 0.5em 1em;
+      text-align: left;
+      cursor: pointer;
+      width: 100%;
+      z-index: 10;
+      font-size: 24px;
+      font-weight: 300; 
+    }
+
+    .dropdownArrow {
+      pointer-events: none;
+      position: absolute;
+      right: 0;
+      width: 60px; 
+      height: 60px; 
+      transition: transform 0.3s ease;
+      transform: translateY(-50%);
+      top: 50%;
+    }
+
+    .customDropdownList {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      width: 85px;
+      left: 71%;
+      margin-top: 15px;
+      background-color: transparent;
+      border: 1px solid $main-text-color;
+      z-index: 1000;
+    }
+
+    .customDropdownItem {
+      padding: 5px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: 300;
+
+      &:hover {
+        background-color: $color-yellow;
+      }
+    }
+
+
+    .dropdown {
+      display: none;
+    }
+  }
+
+  .buttonGroup {
+    display: flex;
+    justify-content: space-between;
+    width: 410px;
+    margin-top: 468px;
+  }
+
+  .button {
+    font-family: $font-base;
+    font-size: 24px;
+    font-weight: 300;
+    height: 80px;
+    width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: 0.75px solid $main-text-color;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+    &:disabled {
+      color: $main-text-color;
+      cursor: not-allowed;
+    }
+
+    &:not(:disabled):hover {
+      transform: scale(1.1);
+    }
+  }
+}

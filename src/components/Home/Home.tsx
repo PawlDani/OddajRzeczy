@@ -8,7 +8,7 @@ import HomeSteps from "./Steps/Steps";
 import HomeButton from "./HomeButton/HomeButton";
 import HomeAbout from "./About/About";
 import HomeHelpSection from "./Help/Help";
-import HomeContact from "./Contact/Contact";
+import HomeContact from "../common/Footer/Contact/Contact";
 
 const Home: React.FC = () => {
   const { hash } = useLocation();

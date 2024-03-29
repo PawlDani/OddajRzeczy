@@ -1,0 +1,183 @@
+@import "../../../styles/colors";
+@import "../../../styles/fonts";
+
+.formStep {
+  margin-left: 142px;
+  font-family: $font-base;
+
+  .stepCounter {
+    margin-top: 36px;
+    font-size: 24px;
+    font-weight: 300;
+    margin-bottom: 70px;
+    color: $main-text-color;
+  }
+
+  .title {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: black;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .dropdownContainer {
+      position: relative;
+      align-items: center;
+      width: 300px;
+      z-index: 10;
+    }
+
+    .dropdownLabel {
+      max-width: 300px;
+      display: block;
+      border: 0.75px solid $main-text-color;
+      background-color: transparent;
+      padding: 8px 0px 8px 16px;
+      text-align: left;
+      cursor: pointer;
+      z-index: 10;
+      font-size: 24px;
+      font-weight: 300;
+    }
+
+    .dropdownArrow {
+      pointer-events: none;
+      position: absolute;
+      right: 0px;
+      width: 60px;
+      height: 60px;
+      transition: transform 0.3s ease;
+      transform: translateY(-50%);
+      top: 50%;
+    }
+
+    .customDropdownList {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      background-color: $main-background-color;
+      top: 100%;
+      width: 100%;
+      left: 0;
+      margin-top: 15px;
+
+      border: 1px solid $main-text-color;
+      z-index: 2;
+    }
+
+    .customDropdownItem {
+      padding: 5px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: 300;
+
+      &:hover {
+        background-color: $color-yellow;
+      }
+    }
+
+    .checkBoxTitle {
+      font-size: 24px;
+      font-weight: 600;
+      margin-top: 30px;
+    }
+
+    .checkboxGroup {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      max-width: 750px;
+    }
+
+    .checkboxContainer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: transparent;
+      border: 0.75px solid $main-text-color;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: lighten($color-yellow, 10%);
+        cursor: pointer;
+      }
+    }
+
+    .checkboxSelected {
+      background-color: $color-yellow;
+    }
+
+    .hiddenCheckbox {
+      display: none;
+    }
+
+    .checkboxContent {
+      display: flex;
+      align-items: center;
+
+      // hover cursor pointer
+    }
+
+    .checkboxLabel {
+      padding: 11px 26px;
+      font-size: 24px;
+      font-weight: 300;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .inputTitle {
+      font-size: 24px;
+      font-weight: 600;
+      margin-top: 26px;
+    }
+
+    .specificLocationInput {
+      font-size: 20px;
+      width: 550px;
+      padding: 10px;
+      max-height: 40px;
+
+      background-color: transparent;
+      border: 0.75px solid $main-text-color;
+      outline: none;
+    }
+  }
+
+  .buttonGroup {
+    display: flex;
+    justify-content: space-between;
+    width: 410px;
+    margin-top: 120px;
+  }
+
+  .button {
+    font-family: $font-base;
+    font-size: 24px;
+    font-weight: 300;
+    height: 80px;
+    width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: 0.75px solid $main-text-color;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+    &:disabled {
+      color: $main-text-color;
+      cursor: not-allowed;
+    }
+
+    &:not(:disabled):hover {
+      transform: scale(1.1);
+    }
+  }
+}
