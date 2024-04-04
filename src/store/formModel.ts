@@ -90,7 +90,7 @@ const formModel: FormModel = {
   setNote: action((state, note) => {
     state.formData.note = note;
   }),
-  submitForm: thunk(async (actions, payload, { getState }) => {
+  submitForm: thunk(async (actions, _, { getState }) => {
     const { formData } = getState();
     const user = auth.currentUser; // Get the currently logged-in user
 
