@@ -9,10 +9,8 @@
     font-size: 36px;
     font-weight: 600;
     margin-bottom: 45px;
+    margin-top: 70px;
     color: black;
-  }
-
-  .row {
   }
 
   .title {
@@ -22,18 +20,49 @@
     margin-bottom: 20px;
   }
 
-  .content {
+  .giveawayContent {
     font-size: 24px;
     font-weight: 300;
     color: black;
+  }
+
+  .detailsContent {
+    font-size: 24px;
+    font-weight: 300;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    line-height: 55px;
+    max-height: 220px; 
+    overflow-y: auto;
+
+    .detailRow {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
   }
 
   .column {
     margin-top: 50px;
     display: inline-block;
     vertical-align: top;
-    width: 272px;
-    margin-right: 271px;
+    width: 400px;
+    max-width: 400px;
+    margin-right: 200px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .secondColumn {
+    margin-top: 50px;
+    display: inline-block;
+    vertical-align: top;
+    width: 257px;
+    max-width: 257px;
+    margin-right: 200px;
 
     &:last-child {
       margin-right: 0;
@@ -49,7 +78,6 @@
       font-family: $font-base;
       font-size: 24px;
       font-weight: 300;
-      margin-top: 107px;
       padding: 23px 52px;
       display: flex;
       align-items: center;
@@ -81,4 +109,14 @@
       margin-bottom: 0;
     }
   }
+}
+
+.detailsContent .detailRow span:first-child {
+  min-width: 120px; 
+  margin-right: 10px; 
+}
+
+.detailsContent .detailRow span:last-child {
+  text-align: right;
+  flex-grow: 1; 
 }

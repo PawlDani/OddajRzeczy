@@ -1,5 +1,7 @@
 import { action, Action, Thunk, thunk } from "easy-peasy";
-import { submitFormData } from "../services/mockServices";
+import { db } from "../config/firebase-config";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { auth } from "../config/firebase-config";
 
 export interface FormData {
   selectedItem: string;
@@ -90,29 +92,33 @@ const formModel: FormModel = {
   }),
   submitForm: thunk(async (actions, payload, { getState }) => {
     const { formData } = getState();
-    await submitFormData(formData);
-    console.log("Form data after submission:", formData);
-    actions.resetForm();
+    const user = auth.currentUser; // Get the currently logged-in user
+
+    if (user) {
+      try {
+        await addDoc(collection(db, "submissions"), {
+          ...formData,
+          userId: user.uid, // Associate the form submission with the user's UID
+          submittedAt: serverTimestamp(), // Use server timestamp for consistency
+        });
+        console.log("Form data submitted to Firestore");
+        actions.resetForm(); // Reset the form on successful submission
+      } catch (error) {
+        console.error("Error submitting form data to Firestore:", error);
+      }
+    } else {
+      console.error("No user logged in");
+    }
   }),
   resetForm: action((state) => {
-    // Reset all fields to their initial state
-    const formData: any = state.formData;
-    Object.keys(formData).forEach((key) => {
-      formData[key] = "";
+    (Object.keys(state.formData) as Array<keyof FormData>).forEach((key) => {
+      if (Array.isArray(state.formData[key])) {
+        (state.formData[key] as any) = [] as any;
+      } else {
+        (state.formData[key] as any) = "" as any;
+      }
     });
-    state.formData.helpGroups = []; // Ensure helpGroups is reset to an empty array
   }),
-};
-// Temporary mock implementation to simulate form data submission
-export const submitFormData = async (formData: FormData) => {
-  console.log("Mock submitting form data:", formData);
-  // Simulate a network request delay
-  return new Promise((resolve) =>
-    setTimeout(() => {
-      console.log("Form Data Submitted:", formData);
-      resolve(formData);
-    }, 1000)
-  );
 };
 
 export default formModel;

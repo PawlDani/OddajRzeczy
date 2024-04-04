@@ -3,13 +3,17 @@ import styles from "./Hero.module.scss";
 import FormHeroImage from "../../../assets/Form-Hero-Image.jpg";
 import decoration from "../../../assets/Decoration.svg";
 
-const GiveAwayHero: React.FC = () => {
+const GiveAwayHero: React.FC<{ currentStep: number }> = ({ currentStep }) => {
   return (
     <div id="start" className={`${styles.heroSection} container`}>
       <div className={styles.imageContainer}>
         <img src={FormHeroImage} alt="Hero for Give Away" />
       </div>
-      <div className={styles.contentWrapper}>
+      <div
+        className={`${styles.contentWrapper} ${
+          currentStep > 4 ? styles.adjustedMargin : ""
+        }`}
+      >
         <div className={styles.content}>
           <h1>Oddaj rzeczy, których już nie chcesz POTRZEBUJĄCYM</h1>
           <img src={decoration} alt="Decoration" />

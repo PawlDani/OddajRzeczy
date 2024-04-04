@@ -5,7 +5,8 @@ import StepOne from "../StepOne/StepOne";
 import StepTwo from "../StepTwo/StepTwo";
 import StepThree from "../StepThree/StepThree";
 import StepFour from "../StepFour/StepFour";
-import SummaryStep from "../SummaryStep/SummaryStep"; 
+import SummaryStep from "../SummaryStep/SummaryStep";
+import ThankYouStep from "../StepSix/StepSix";
 
 const MultiPageForm: React.FC<{
   setCurrentStepInParent: (step: number) => void;
@@ -25,7 +26,7 @@ const MultiPageForm: React.FC<{
   const handleFormSubmission = async () => {
     await submitFormAction(); // Submit the form data
     console.log("Form submitted successfully");
-    setCurrentStep(1); 
+    setCurrentStep(6);
   };
 
   return (
@@ -44,6 +45,7 @@ const MultiPageForm: React.FC<{
         {currentStep === 5 && (
           <SummaryStep prevStep={prevStep} submit={handleFormSubmission} />
         )}
+        {currentStep === 6 && <ThankYouStep />}
       </div>
     </div>
   );

@@ -43,16 +43,20 @@ const authModel: AuthModel = {
         email,
         password
       );
-      // Check for null email
-      if (userCredential.user.email) {
-        actions.setUser({ email: userCredential.user.email });
-        actions.setError(null);
-      } else {
-        actions.setError("User email is null.");
-      }
+      // Assuming successful signup if reaching here
+      const userEmail = userCredential.user.email;
+      actions.setUser({ email: userEmail ? userEmail : "" });
+      actions.setError(null); // Clear any previous errors
     } catch (error) {
       console.error("Error signing up:", error);
-      actions.setError("Failed to sign up.");
+      // Set appropriate error based on the error thrown
+      if ((error as any).code === "auth/email-already-in-use") {
+        actions.setError("Email is already in use.");
+      } else {
+        actions.setError("Failed to sign up.");
+      }
+      // Re-throw the error for the caller to handle
+      throw error;
     } finally {
       actions.setLoading(false);
     }
@@ -65,19 +69,20 @@ const authModel: AuthModel = {
         email,
         password
       );
-      if (userCredential.user.email) {
-        actions.setUser({ email: userCredential.user.email });
-        actions.setError(null);
-      } else {
-        actions.setError("User email is null.");
-      }
+      actions.setUser({
+        email: userCredential.user.email ? userCredential.user.email : "",
+      });
+      actions.setError(null); // Clear any existing errors upon successful sign-in
     } catch (error) {
       console.error("Error signing in:", error);
-      actions.setError("Failed to sign in.");
+      // Set an appropriate error message based on the error type
+      actions.setError("Authentication failed. Please check your credentials.");
+      throw new Error("Authentication failed."); // Important: Re-throw the error
     } finally {
       actions.setLoading(false);
     }
   }),
+
   signOut: thunk(async (actions) => {
     actions.setLoading(true);
     try {

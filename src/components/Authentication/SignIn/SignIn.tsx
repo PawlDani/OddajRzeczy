@@ -1,29 +1,29 @@
-import { useState } from "react";
-import { useStoreActions } from "../../../hooks/hooks";
+import React, { useState } from "react";
+import { useStoreActions, useStoreState } from "../../../hooks/hooks";
 import { useNavigate } from "react-router-dom";
-import Header from "../../common/Header/Header"; 
-import HomeDivider from "../../common/Divider/Divider"; 
-import decoration from "../../../assets/Decoration.svg"; 
-import styles from "./SignIn.module.scss"; 
+import Header from "../../common/Header/Header";
+import HomeDivider from "../../common/Divider/Divider";
+import decoration from "../../../assets/Decoration.svg";
+import styles from "./SignIn.module.scss";
 
 const SignIn = () => {
   const navigate = useNavigate();
   const signIn = useStoreActions((actions) => actions.auth.signIn);
+  const { loading, error } = useStoreState((state) => state.auth);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setError(""); 
 
     try {
       await signIn({ email, password });
-      navigate("/"); 
+      // Navigate only on successful sign in
+      navigate("/");
     } catch (err) {
+      // Error handling is done within the signIn thunk action, so no need to set error state here
       console.error(err);
-      setError("Failed to sign in. Please check your email and password."); 
     }
   };
 
@@ -35,7 +35,6 @@ const SignIn = () => {
           <HomeDivider
             dividerContent={{ svg: decoration, title: "Zaloguj się" }}
           />
-
           <form onSubmit={handleSubmit} className={styles.signUpForm}>
             <div className={styles.inputWrapper}>
               <label htmlFor="email">Email</label>
@@ -59,17 +58,23 @@ const SignIn = () => {
               />
             </div>
             <div className={styles.buttonsContainer}>
-              <button type="submit" className={styles.submitButton}>
+              <button
+                type="submit"
+                disabled={loading}
+                className={styles.submitButton}
+              >
                 Zaloguj się
               </button>
               <button
-                className={styles.submitButton}
+                type="button"
                 onClick={() => navigate("/rejestracja")}
+                className={styles.submitButton}
               >
                 Załóż konto
               </button>
             </div>
-            {error && <p style={{ color: "red" }}>{error}</p>}
+            {loading && <p className={styles.loading}>Loading...</p>}
+            {error && <p className={styles.errorMsg}>{error}</p>}
           </form>
         </div>
       </div>

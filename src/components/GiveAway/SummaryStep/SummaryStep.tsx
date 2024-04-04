@@ -15,7 +15,7 @@ const SummaryStep: React.FC<{
       <h2>Podsumowanie Twojej darowizny</h2>
       <div className={styles.row}>
         <div className={styles.title}>Oddajesz:</div>
-        <div className={styles.content}>
+        <div className={styles.giveawayContent}>
           <img src={svg1} alt="Icon" className={styles.icon} />
           {formData.numberOfBags} worki, {formData.selectedItem},{" "}
           {formData.helpGroups.join(", ")}
@@ -28,24 +28,40 @@ const SummaryStep: React.FC<{
       <div className={styles.row}>
         <div className={styles.column}>
           <div className={styles.title}>Adres odbioru:</div>
-          <div className={styles.content}>
-            Ulica: {formData.street}
-            <br />
-            Miasto: {formData.city}
-            <br />
-            Kod pocztowy: {formData.postCode}
-            <br />
-            Telefon: {formData.phone}
+          <div className={styles.detailsContent}>
+            <div className={styles.detailRow}>
+              <span>Ulica</span>
+              <span>{formData.street}</span>
+            </div>
+            <div className={styles.detailRow}>
+              <span>Miasto</span>
+              <span>{formData.city}</span>
+            </div>
+            <div className={styles.detailRow}>
+              <span>Kod pocztowy</span>
+              <span>{formData.postCode}</span>
+            </div>
+            <div className={styles.detailRow}>
+              <span>Telefon</span>
+              <span>{formData.phone}</span>
+            </div>
           </div>
         </div>
-        <div className={styles.column}>
+        <div className={styles.secondColumn}>
           <div className={styles.title}>Termin odbioru:</div>
-          <div className={styles.content}>
-            Data: {formData.date}
-            <br />
-            Godzina: {formData.time}
-            <br />
-            Uwagi dla kuriera: {formData.note}
+          <div className={styles.detailsContent}>
+            <div className={styles.detailRow}>
+              <span>Data</span>
+              <span>{formData.date}</span>
+            </div>
+            <div className={styles.detailRow}>
+              <span>Godzina</span>
+              <span>{formData.time}</span>
+            </div>
+            <div className={styles.detailRow}>
+              <span>Uwagi dla kuriera</span>
+              <span>{formData.note}</span>
+            </div>
           </div>
         </div>
       </div>

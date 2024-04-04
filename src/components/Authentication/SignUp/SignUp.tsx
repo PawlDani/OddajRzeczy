@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useStoreActions, useStoreState } from "../../../hooks/hooks";
 import { useNavigate } from "react-router-dom";
 import Header from "../../common/Header/Header";
@@ -8,8 +8,6 @@ import styles from "./SignUp.module.scss";
 
 const SignUp = () => {
   const navigate = useNavigate();
-  const user = useStoreState((state) => state.auth.user);
-
   const signUp = useStoreActions((actions) => actions.auth.signUp);
   const loading = useStoreState((state) => state.auth.loading);
   const error = useStoreState((state) => state.auth.error);
@@ -17,20 +15,38 @@ const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
+  const [localError, setLocalError] = useState(""); // Additional state for local error messages
+
+  const validateEmail = (email: string) => {
+    return email.match(
+      /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    );
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setLocalError(""); // Reset local error state
 
-    if (password !== repeatPassword) {
-      alert("Passwords do not match");
+    if (!validateEmail(email)) {
+      setLocalError("Invalid email address format.");
       return;
     }
-
+    if (password.length < 6) {
+      setLocalError("Password must be at least 6 characters long.");
+      return;
+    }
+    if (password !== repeatPassword) {
+      setLocalError("Passwords do not match.");
+      return;
+    }
     try {
       await signUp({ email, password });
-      console.log("User signed up and state updated:", user);
+      // If signUp is successful, navigate to the homepage
       navigate("/");
-    } catch (error) {}
+    } catch (err) {
+      // If there's an error, it will be caught here
+      console.error(err);
+    }
   };
 
   return (
@@ -41,7 +57,6 @@ const SignUp = () => {
           <HomeDivider
             dividerContent={{ svg: decoration, title: "Załóż konto" }}
           />
-
           <form onSubmit={handleSubmit} className={styles.signUpForm}>
             <div className={styles.inputWrapper}>
               <label htmlFor="email">Email</label>
@@ -54,7 +69,6 @@ const SignUp = () => {
                 required
                 className={styles.inputField}
               />
-
               <label htmlFor="password">Hasło</label>
               <input
                 id="password"
@@ -75,8 +89,11 @@ const SignUp = () => {
                 className={styles.inputField}
               />
             </div>
+            {localError && <p className={styles.errorMsg}>{localError}</p>}
+            {error && <p className={styles.errorMsg}>{error}</p>}
             <div className={styles.buttonsContainer}>
               <button
+                type="button"
                 onClick={() => navigate("/logowanie")}
                 className={styles.submitButton}
               >
@@ -91,9 +108,7 @@ const SignUp = () => {
               </button>
             </div>
           </form>
-
           {loading && <p>Loading...</p>}
-          {error && <p style={{ color: "red" }}>{error}</p>}
         </div>
       </div>
     </>

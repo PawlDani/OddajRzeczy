@@ -241,6 +241,7 @@ const StepFour: React.FC<StepFourProps> = ({ nextStep, prevStep }) => {
             <textarea
               name="note"
               id="note"
+              maxLength={60}
               value={formData.note}
               onChange={handleChange}
               className={styles.textarea}

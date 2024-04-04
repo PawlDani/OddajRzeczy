@@ -1,0 +1,22 @@
+@import "../../../styles/fonts";
+@import "../../../styles/colors";
+
+.thankYouMessage {
+  display: flex;
+  font-family: $font-base;
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 290px;
+  text-align: center;
+
+  h2 {
+    max-width: 628px; 
+    margin-bottom: 25px;
+    font-size: 40px;
+    font-weight: 300;
+    letter-spacing: -0.8px;
+    color: $main-text-color;
+  }
+}

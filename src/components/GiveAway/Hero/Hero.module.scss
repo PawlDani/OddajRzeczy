@@ -42,6 +42,10 @@
     margin-top: 108px;
     max-width: 663px;
 
+    &.adjustedMargin {
+      margin-bottom: 159px; // Reduced margin after dynamic text disappears
+    }
+
     .content {
       animation: fadeInSlideUp 1.5s ease-out forwards;
       display: flex;

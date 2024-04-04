@@ -11,7 +11,7 @@ const OddajRzeczy: React.FC = () => {
   return (
     <>
       <Header />
-      <GiveAwayHero />
+      <GiveAwayHero currentStep={currentStep} />
       <DynamicText currentStep={currentStep} />
       <main>
         <MultiPageForm setCurrentStepInParent={setCurrentStep} />
