@@ -6,15 +6,13 @@
   overflow: hidden;
 
   .contactForm {
-    background: url("src/assets/Background-Contact-Form.jpg") 0% 0% no-repeat
-      padding-box;
-
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     justify-content: space-between;
     height: 1112px;
     position: relative;
+    background-position: 90% center;
 
     &:before {
       content: "";
@@ -47,11 +45,11 @@
           display: flex;
           width: 300px;
           margin: 0 auto;
-          color: green; 
-          margin-top: 20px; 
+          color: green;
+          margin-top: 20px;
           font-weight: bold;
-          font-size: 18px; 
-          text-align: center; 
+          font-size: 18px;
+          text-align: center;
         }
       }
 

@@ -3,6 +3,7 @@ import HomeDivider from "../../Divider/Divider";
 import decoration from "../../../../assets/Decoration.svg";
 import facebook from "../../../../assets/Facebook.svg";
 import instagram from "../../../../assets/Instagram.svg";
+import backgroundImage from "../../../../assets/Background-Contact-Form.jpg";
 import styles from "./Contact.module.scss";
 
 const ContactForm: React.FC = () => {
@@ -86,7 +87,10 @@ const ContactForm: React.FC = () => {
 
   return (
     <div className={styles.contactFormWrapper} id="contact">
-      <div className={`${styles.contactForm} container`}>
+      <div
+        className={`${styles.contactForm} container`}
+        style={{ backgroundImage: `url(${backgroundImage})` }}
+      >
         <div className={styles.formWrapper}>
           <div className={styles.dividerWrapper}>
             <HomeDivider
